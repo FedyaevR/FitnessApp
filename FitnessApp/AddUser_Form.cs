@@ -17,6 +17,7 @@ namespace FitnessApp
     {
         UserController userController;
         Form1 form1;
+        bool isDataFill = false;
         public AddUser_Form(UserController userController, Form1 form1)
         {
             InitializeComponent();
@@ -25,11 +26,6 @@ namespace FitnessApp
             this.userController = userController;
             this.form1 = form1;
             this.form1.Visible = false;
-        }
-
-        private void label4_Click(object sender, EventArgs e)
-        {
-
         }
 
         private void button_AddUser_Click(object sender, EventArgs e)
@@ -42,6 +38,7 @@ namespace FitnessApp
                 int.TryParse(textBox_UserHeight.Text, out int heightRes);
                 var gender =comboBox_UserGender.SelectedItem.ToString();
                 userController.SetNewUserData(gender, dateTimePicker_BirthDate.Value, weightRes, heightRes);
+                isDataFill = true;
                 this.Close();
                 form1.Visible = true;
             }
@@ -50,7 +47,10 @@ namespace FitnessApp
 
         private void AddUser_Form_FormClosed(object sender, FormClosedEventArgs e)
         {
-            Application.Exit();
+            if (isDataFill == false)
+            {
+                Application.Exit();
+            }
         }
     }
 }

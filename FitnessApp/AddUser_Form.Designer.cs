@@ -92,7 +92,6 @@ namespace FitnessApp
             this.label4.Size = new System.Drawing.Size(119, 17);
             this.label4.TabIndex = 7;
             this.label4.Text = "Input your weight:";
-            this.label4.Click += new System.EventHandler(this.label4_Click);
             // 
             // textBox_UserHeight
             // 
@@ -135,6 +134,7 @@ namespace FitnessApp
             this.Controls.Add(this.label2);
             this.Controls.Add(this.comboBox_UserGender);
             this.Name = "AddUser_Form";
+            this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "AddUser_Formcs";
             this.FormClosed += new System.Windows.Forms.FormClosedEventHandler(this.AddUser_Form_FormClosed);
             this.ResumeLayout(false);

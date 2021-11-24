@@ -13,7 +13,7 @@ namespace FitnessApp.BL.Controller
         public User CurrentUser { get; }
         public bool IsNewUser { get; } = false;
         private const string USER_FILE_NAME = "user.dat";
-
+        private Random rand = new Random();
         public UserController() { }
         public UserController(string userName)
         {
@@ -45,6 +45,7 @@ namespace FitnessApp.BL.Controller
             CurrentUser.BirthDate = birthDate;
             CurrentUser.Weight = weight;
             CurrentUser.Height = height;
+            CurrentUser.Id = rand.Next();
             Save();
         }
         private List<User> GetUsersData()

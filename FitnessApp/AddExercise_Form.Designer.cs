@@ -132,6 +132,7 @@ namespace FitnessApp
             this.Controls.Add(this.textBox_ExerciseName);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
             this.Name = "AddExercise_Form";
+            this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "AddExercise_Form";
             this.ResumeLayout(false);
             this.PerformLayout();

@@ -9,7 +9,7 @@ namespace FitnessApp.BL.Model
     [Serializable]
     public class Eating
     {
-
+        public int Id { get; set; }
         public DateTime Moment { get; set; }
         /// <summary>
         /// Что и сколько ел пользователь.
@@ -28,6 +28,7 @@ namespace FitnessApp.BL.Model
             Food product = Foods.Keys.FirstOrDefault(f => f.Name.Equals(food.Name));
             if (product == null)
             {
+                food.Id = User.Id;
                 Foods.Add(food,weight);
             }
             else

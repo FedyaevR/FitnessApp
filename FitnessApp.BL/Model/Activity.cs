@@ -9,6 +9,7 @@ namespace FitnessApp.BL.Model
     [Serializable]
     public class Activity
     {
+        public int Id { get;set; }
         public string Name { get; set; }
         public double CalloriesPerMinute { get; set; }
         //public virtual ICollection<Exercise> Exersices { get; set; }

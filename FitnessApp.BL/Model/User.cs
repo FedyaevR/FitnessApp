@@ -9,12 +9,12 @@ namespace FitnessApp.BL.Model
     [Serializable]
     public class User
     {
+        public int Id { get; set; }
         public string Name { get; }
         public Gender Gender { get; set; }
         public DateTime BirthDate { get; set; }
         public double Weight { get; set; }
         public double Height { get; set; }
-        
         public int Age { get { return DateTime.Now.Year - BirthDate.Year; } }
 
         public User(string name,

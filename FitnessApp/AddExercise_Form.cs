@@ -30,12 +30,6 @@ namespace FitnessApp
             return (begin, end, activity);
         }
 
-       
-        private void button_AddExercise_Click(object sender, EventArgs e)
-        {
-         
-        }
-
         private void button_Done_Click(object sender, EventArgs e)
         {
             if (string.IsNullOrWhiteSpace(textBox_ExerciseName.Text))

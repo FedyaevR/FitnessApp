@@ -26,7 +26,9 @@ namespace FitnessApp.BL.Controller
             var product = Foods.SingleOrDefault(f => f.Name == food.Name);
             if (product == null)
             {
+                food.Id = user.Id;
                 Foods.Add(food);
+                Eating.Id = user.Id;
                 Eating.Add(food,weight);
                 Save();
             }

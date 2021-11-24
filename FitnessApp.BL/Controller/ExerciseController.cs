@@ -36,8 +36,10 @@ namespace FitnessApp.BL.Controller
             var act = Activities.SingleOrDefault(a => a.Name == activity.Name);
             if (act == null)
             {
+                activity.Id = user.Id;
                 Activities.Add(activity);
-                var exercise = new Exercise(begin,end,act,user);
+                var exercise = new Exercise(begin,end,activity,user);
+                exercise.Id = user.Id;
                 Exercises.Add(exercise);
             }
             else
